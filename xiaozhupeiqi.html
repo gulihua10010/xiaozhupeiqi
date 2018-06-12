@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小猪佩奇</title>
+</head>
+<body>
+<style>
+    #canvas, #canvas1, #canvas2 {
+        border: black 1px solid;
+        position: fixed;
+        left: 0px;
+        top: 0px;
+    }
+
+
+</style>
+<canvas id="canvas2"></canvas>
+<canvas id="canvas1"></canvas>
+<canvas id="canvas"></canvas>
+</body>
+<script>
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext('2d');
+    var x = canvas.width = window.innerWidth;
+    var y = canvas.height = window.innerHeight;
+    var canvas1 = document.getElementById("canvas1");
+    var context1 = canvas1.getContext('2d');
+    var x = canvas1.width = window.innerWidth;
+    var y = canvas1.height = window.innerHeight;
+    var canvas2 = document.getElementById("canvas2");
+    var context2 = canvas2.getContext('2d');
+    var x = canvas2.width = window.innerWidth;
+    var y = canvas2.height = window.innerHeight;
+    if (!context) {
+        alert("您的浏览器不支持canvas！");
+    } else {
+        window.onload = function () {
+            draw();
+        }
+    }
+    // 皮肤颜色rgb(237,187,214);
+    // 描边颜色rgb(235,157,199);
+    // 身体颜色rgb(223,57,81);
+    // 身体描边rgb(159,28,76);
+    // 脸腮颜色rgb(249,147,213);
+    //鼻子rgb(171,110,168)
+    function draw() {
+        // drawline();
+
+        drawhead();
+        body();
+        handfoot();
+
+        font(context,"小猪佩奇身上纹掌声送给社会人","rgb(235,157,199)");
+    }
+
+    //头部
+    function drawhead() {
+        context.lineWidth = 5;
+        context.fillStyle = "rgb(253,208,228)";
+        context.strokeStyle = "rgb(235,157,199)";
+        context.translate(x / 2, y * (1 / 5))
+        context1.translate(x / 2, y * (1 / 5))
+        context2.translate(x / 2, y * (1 / 5))
+        context.beginPath()
+        // context.arc(0, 0, 80, -Math.PI / 36, Math.PI, false);
+        rander(context, 0, 0, 80, -Math.PI / 36, Math.PI, Math.PI / 180, 0, "rgb(235,157,199)");
+        // context.mov  eTo(-80, 0);
+        // context.bezierCurveTo(-80, -40, -50, -85, 0, -100);
+        // context.closePath()
+
+
+        setTimeout(function () {
+            bezierCurve(context, 0, "rgb(235,157,199)",
+                [-80, 0],
+                [-80, -40],
+                [-50, -85],
+                [0, -100]);
+        }, 3000)
+
+        // context.moveTo(0, -100);
+
+        // context.bezierCurveTo(60, -115, 90, -110, 110, -110);
+        setTimeout(function () {
+            bezierCurve(context, 0, "rgb(235,157,199)",
+                [0, -100],
+                [60, -115],
+                [90, -110],
+                [110, -110]);
+        }, 4700)
+
+        // context.moveTo(110, -110);
+        // context.bezierCurveTo(150, -100, 140, -75, 130, -60);
+        setTimeout(function () {
+            bezierCurve(context, 0, "rgb(235,157,199)",
+                [110, -110],
+                [150, -100],
+                [140, -75],
+                [130, -60]);
+        }, 6300)
+
+        // context.moveTo(130, -60);
+        // context.bezierCurveTo(110, -40, 105, -30, 66, -30);
+        setTimeout(function () {
+            bezierCurve(context, 0, "rgb(235,157,199)",
+                [130, -60],
+                [110, -40],
+                [105, -30],
+                [66, -30]);
+        }, 7900)
+
+        // context.stroke();
+        // context.moveTo(75, -34);
+        // context.bezierCurveTo(80, -20, 80, -20, 80, 0);
+        setTimeout(function () {
+            bezierCurve(context, 0, "rgb(235,157,199)",
+                [75, -34],
+                [80, -20],
+                [80, -20],
+                [80, 0]);
+        }, 9500)
+//         context.closePath();
+
+//         setTimeout(function () {
+//             context.fill();
+        // context.stroke()
+
+// //         },11400);
+//         context.beginPath();
+//         context.moveTo(75,-34);
+//         context.lineTo(-70,-34);
+//         context.lineTo(-5,-96);
+//         context.lineTo(20,-102);
+//         context.lineTo(50,-105);
+//         context.lineTo(80,-108);
+//         context.lineTo(111,-107);
+//         context.lineTo(132,-65);
+//         context.lineTo(115,-48);
+//         context.lineTo(66, -30)
+//         context.lineTo(75,0);
+//         context.closePath();
+//         context.fill();
+        context.beginPath();
+        context.moveTo(130, -60);
+        // context.bezierCurveTo(100, -60, 100, -90, 110, -110);
+        setTimeout(function () {
+            bezierCurve(context, 0, "rgb(235,157,199)",
+                [130, -60],
+                [100, -60],
+                [100, -90],
+                [110, -110]);
+        }, 11300)
+
+//         context.stroke();
+//         // //耳朵
+//         context.beginPath()
+//         context.moveTo(-53, -70);
+//         context.bezierCurveTo(-90, -105, -75, -110, -75, -115);
+        setTimeout(function () {
+            bezierCurve(context, 0, "rgb(235,157,199)",
+                [-53, -70],
+                [-90, -105],
+                [-75, -110],
+                [-75, -115]);
+        }, 13300)
+//         context.moveTo(-75, -115);
+//         context.bezierCurveTo(-50, -125, -50, -95, -40, -76);
+        setTimeout(function () {
+            bezierCurve(context, 0, "rgb(235,157,199)",
+                [-75, -115],
+                [-50, -125],
+                [-50, -95],
+                [-40, -76]);
+        }, 15000)
+//         context.moveTo(-10, -100);
+//         context.bezierCurveTo(-30, -120, -30, -130, -25, -135);
+        setTimeout(function () {
+            bezierCurve(context, 0, "rgb(235,157,199)",
+                [-10, -100],
+                [-30, -120],
+                [-30, -130],
+                [-25, -135]);
+        }, 16700)
+//         context.moveTo(-25, -135);
+//         context.bezierCurveTo(-10, -145, 10, -105, 0, -102);
+        setTimeout(function () {
+            bezierCurve(context, 0, "rgb(235,157,199)",
+                [-25, -135],
+                [-10, -145],
+                [10, -105],
+                [0, -102]);
+        }, 18400)
+//         context.beginPath();  ;
+//         context.moveTo(-43,-80);
+//         context.lineTo(-70,-110);
+//         context.lineTo(-75,-112);
+//         context.lineTo(-53, -70);
+//         context.fill();
+//         context.beginPath();
+//         context.moveTo(-8,-100);
+//         context.lineTo(-24,-127);
+//         context.lineTo(-18,-133);
+//         context.lineTo(0,-102);
+//         context.fill();
+//         // //眼睛
+//         context.beginPath()
+//         context.moveTo(0, -70);
+//         context.bezierCurveTo(15, -75, 15, -45, 0, -50);
+        setTimeout(function () {
+            bezierCurve(context, 0, "rgb(235,157,199)",
+                [0, -70],
+                [15, -75],
+                [15, -45],
+                [0, -50]);
+        }, 20000)
+//         context.stroke()
+//         context.moveTo(0, -50);
+//         context.bezierCurveTo(-15, -45, -15, -75, 0, -70);
+        setTimeout(function () {
+            bezierCurve(context, 0, "rgb(235,157,199)",
+                [0, -50],
+                [-15, -45],
+                [-15, -75],
+                [0, -70]);
+        }, 21600)
+//         context.stroke()
+        context.save();
+// context.globalCompositeOperation="source-over"
+
+        // context.closePath();
+// ////
+        context.beginPath()
+//         context.moveTo(55, -85);
+//         context.bezierCurveTo(70, -80, 70, -70, 55, -60);
+        setTimeout(function () {
+            bezierCurve(context, 0, "rgb(235,157,199)",
+                [55, -85],
+                [70, -80],
+                [70, -70],
+                [55, -60]);
+        }, 23200)
+//         context.stroke()
+//         context.moveTo(55, -60);
+//         context.bezierCurveTo(40, -70, 40, -80, 55, -85);
+        setTimeout(function () {
+            bezierCurve(context, 0, "rgb(235,157,199)",
+                [55, -60],
+                [40, -70],
+                [40, -80],
+                [55, -85]);
+        }, 25000)
+        context.fillStyle = "rgb(235,157,199)";
+        context.stroke()
+
+//         //脸腮
+//         context.fillStyle = "rgb(249,147,213)";
+        context.beginPath();
+        context.moveTo(-55, -35);
+//         context.bezierCurveTo(-35, -50, -10, -10, -35, 5);
+        setTimeout(function () {
+            bezierCurve(context, 0, "rgb(249,147,213)",
+                [-55, -35],
+                [-35, -50],
+                [-10, -10],
+                [-35, 5]);
+        }, 26600)
+        context.moveTo(-35, 5)
+//         context.bezierCurveTo(-50, 10, -70, -15, -55, -35);
+        setTimeout(function () {
+            bezierCurve(context, 0, "rgb(249,147,213)",
+                [-35, 5],
+                [-50, 10],
+                [-70, -15],
+                [-55, -35]);
+        }, 28500)
+//         context.fill();
+//         //嘴巴
+//         context.strokeStyle = "rgb(171,110,168)";
+//         context.beginPath();
+//         context.moveTo(10, 25)
+//         context.bezierCurveTo(20, 35, 50, 45, 60, 10);
+//         context.stroke()
+//         context.beginPath();
+
+        setTimeout(function () {
+            bezierCurve(context, 0, "rgb(171,110,168)",
+                [10, 25],
+                [20, 35],
+                [50, 45],
+                [60, 10]);
+        }, 31500)
+
+
+        setTimeout(function () {
+            context.fillStyle = "#222222";
+            context.beginPath();
+            context.arc(-2, -59, 4, 0, Math.PI * 2, true);
+            context.fill();
+        }, 33200)
+        setTimeout(function () {
+
+            context.fillStyle = "#222222";
+            context.beginPath();
+            context.arc(53, -70, 4, 0, Math.PI * 2, true);
+            context.closePath()
+            context.fill();
+        }, 33700)
+        setTimeout(function () {
+            context.fillStyle = "rgb(171,110,168)";
+            context.beginPath();
+            context.arc(115, -82, 4, 0, Math.PI * 2, true);
+            context.fill();
+            context.closePath()
+
+        },34300)
+        setTimeout(function () {
+            context.fillStyle = "rgb(171,110,168)";
+            context.beginPath();
+            context.arc(125, -84, 4, 0, Math.PI * 2, true);
+            context.fill();
+            context.closePath()
+
+        },34800)
+        setTimeout(function () {
+            context.beginPath();
+            context.fillStyle = "rgb(249,147,213)";
+            context.moveTo(-55, -35);
+            context.bezierCurveTo(-35, -50, -10, -10, -35, 5);
+            context.bezierCurveTo(-50, 10, -70, -15, -55, -35);
+            context.fill()
+
+        },35200)
+
+
+    }
+
+
+    setTimeout(function () {
+        context1.beginPath();
+        context1.fillStyle = "rgb(253,208,228)";
+        context1.arc(0, 0, 78, -Math.PI / 36, Math.PI);
+        context1.bezierCurveTo(-80, -40, -50, -85, 0, -100);
+        context1.bezierCurveTo(60, -115, 90, -110, 110, -110);
+        context1.bezierCurveTo(150, -100, 140, -75, 130, -60);
+        context1.bezierCurveTo(110, -40, 105, -30, 80, -30);
+        context1.bezierCurveTo(80, -20, 80, -20, 80, 0);
+        // context.closePath();
+        context1.fill();
+        context1.moveTo(-53, -70);
+        context1.bezierCurveTo(-90, -105, -75, -110, -75, -115);
+        context1.bezierCurveTo(-50, -125, -50, -95, -40, -76);
+        context1.fill();
+        context1.moveTo(-10, -100);
+        context1.bezierCurveTo(-30, -120, -30, -130, -25, -135);
+        context1.bezierCurveTo(-10, -145, 10, -105, 0, -102);
+        // context.closePath();
+        context1.fill();
+    }, 31000)
+
+
+    //身体
+    function body() {
+
+        context1.globalCompositeOperation = "destination-over";
+        // context.strokeStyle = "rgb(159,28,76)";
+        // context.fillStyle = "rgb(223,57,81)";
+        // context.moveTo(-45, 67);
+        // context.bezierCurveTo(-100, 110, -105, 170, -105, 210);
+        setTimeout(function () {
+        bezierCurve(context, 0, "rgb(159,28,76)",
+            [-50, 68],
+            [-100, 110],
+            [-105, 170],
+            [-105, 210]);
+        },35400)
+        // context.moveTo(45, 67);
+        // context.bezierCurveTo(100, 110, 105, 170, 105, 210);
+            setTimeout(function () {
+        bezierCurve(context, 0, "rgb(159,28,76)",
+            [50, 68],
+            [100, 110],
+            [105, 170],
+            [105, 210]);
+        },37400)
+        // context.moveTo(105, 210);
+        // context.lineTo(-105, 210);
+        // context.stroke();
+        // context.fill();
+        // context.beginPath();
+        // context.lineTo(45, 67);
+        // context.lineTo(105, 67)
+        // context.lineTo(-45, 67);
+        // context.lineTo(-105, 210);
+        // context.lineTo(105, 210);
+        // context.fill();
+        context.beginPath();
+        setTimeout(function () {
+            line(context,
+                [106, 210],
+                [-104, 210],
+                "rgb(159,28,76)")
+
+        },39500)
+        setTimeout(function () {
+            context1.beginPath();
+            context1.fillStyle = "rgb(223,57,81)";
+            context1.moveTo(-45, 67);
+            context1.bezierCurveTo(-100, 110, -105, 170, -105, 210);
+            context1.lineTo(45, 67);
+            context1.bezierCurveTo(100, 110, 105, 170, 105, 210);
+            context1.fill();
+            context1.beginPath();
+            context1.moveTo(-45, 67);
+            context1.lineTo(-105, 210)
+            context1.lineTo(105, 210);
+            context1.lineTo(45, 67);
+            context1.fill();
+
+
+        },41500)
+
+    }
+
+    //四肢
+    function handfoot() {
+
+        //手臂
+        // context.restore();
+        context2.beginPath();
+        context2.lineWidth = 7;
+
+        context2.globalCompositeOperation = "destination-over";
+        // context.moveTo(-70, 90);
+        // context.bezierCurveTo(-70, 100, -120, 80, -170, 155);
+        setTimeout(function () {
+            bezierCurve(context2, 0, "rgb(235,157,199)",
+                [-70, 90],
+                [-70, 100],
+                [-120, 80],
+                [-170, 155]);
+        }, 42000)
+        // context.moveTo(-176, 130);
+        // context.bezierCurveTo(-140, 120, -143, 120, -150, 160);
+        setTimeout(function () {
+            bezierCurve(context2, 0, "rgb(235,157,199)",
+                [-176, 130],
+                [-140, 120],
+                [-143, 120],
+                [-150, 160]);
+        }, 44000)
+        // context.moveTo(70, 90);
+        // context.bezierCurveTo(70, 100, 120, 80, 170, 155);
+        setTimeout(function () {
+            bezierCurve(context2, 0,"rgb(235,157,199)",
+                [70, 90],
+                [70, 100],
+                [120, 80],
+                [170, 155]);
+        }, 46500)
+        // context.moveTo(180, 130);
+        // context.bezierCurveTo(140, 120, 143, 120, 150, 160)
+        setTimeout(function () {
+            bezierCurve(context2, 0, "rgb(235,157,199)",
+                [180, 130],
+                [140, 120],
+                [143, 120],
+                [150, 160]);
+        }, 48500)
+//脚
+//         context.moveTo(-40, 210);
+//         context.bezierCurveTo(-40, 190, -45, 200, -40, 300);
+        setTimeout(function () {
+            bezierCurve(context2, 0, "rgb(235,157,199)",
+                [-40, 210],
+                [-40, 190],
+                [-45, 200],
+                [-40, 300]);
+        }, 50000)
+        // context.moveTo( -40, 300);
+        // context.bezierCurveTo(40, 190, 45, 200, 40, 300);
+        setTimeout(function () {
+            bezierCurve(context2, 0, "rgb(235,157,199)",
+                [40, 210],
+                [40, 190],
+                [45, 200],
+                [40, 300]);
+        }, 52000)
+
+
+        // context.moveTo(-105, 180);
+        // context.bezierCurveTo(-130, 190, -137, 200, -128, 170);
+        setTimeout(function () {
+            bezierCurve(context2, 0, "rgb(235,157,199)",
+                [-105, 180],
+                [-130, 190],
+                [-137, 200],
+                [-128, 170]);
+        }, 54000)
+
+        // context.moveTo(-128, 173);
+        // context.lineTo(-118, 173);
+        setTimeout(function () {
+            line(context2, [-128, 173], [-118, 173], "rgb(235,157,199)")
+        }, 56000)
+
+        // context.moveTo(-118, 170);
+        // context.bezierCurveTo(-130, 250, -145, 160,-145, 160);
+        // context.stroke();
+        setTimeout(function () {
+            bezierCurve(context2, 0, "rgb(235,157,199)",
+                [-118, 170],
+                [-130, 250],
+                [-145, 160],
+                [-145, 160]);
+        }, 58000)
+        //阴影
+        context.beginPath();
+        // context.fillStyle = "rgb(0,0,0,0.1)"
+        // context.moveTo(-110, 300);
+        // context.bezierCurveTo(-30, 270, 30, 270, 120, 300);
+        setTimeout(function () {
+            bezierCurve(context2, 0, "rgba(0,0,0,0.05)",
+                [-110, 300],
+                [-30, 270],
+                [30, 270],
+                [120, 300]);
+        },  60000)
+        // context.moveTo(120, 300);
+        // context.bezierCurveTo(30, 330, -30, 330, -110, 300);
+        setTimeout(function () {
+            bezierCurve(context2, 0, "rgba(0,0,0,0.05)",
+                [120, 300],
+                [30, 330],
+                [-30, 330],
+                [-110, 300]);
+        }, 62000)
+        // context.fill();
+        context.beginPath();
+        context.fillStyle = "rgba(0,0,0,0.5)"
+        // context.moveTo(-40,300);
+        // context.bezierCurveTo(-20, 290, 5, 290, 10, 300);
+        setTimeout(function () {
+            bezierCurve(context2, 0, "rgba(0,0,0,0.2)",
+                [-40, 300],
+                [-20, 290],
+                [5, 290],
+                [10, 300]);
+        }, 65000)
+        // context.moveTo(-40, 300);
+        // context.bezierCurveTo(-20, 310, 5, 310, 10, 300);
+        setTimeout(function () {
+            bezierCurve(context2, 0, "rgba(0,0,0,0.2)",
+                [-40, 300],
+                [-20, 310],
+                [5, 310],
+                [10, 300]);
+        }, 67000)
+        // context.moveTo(40, 300);
+        // context.bezierCurveTo(60, 290, 85, 290, 90, 300);
+        setTimeout(function () {
+            bezierCurve(context2, 0, "rgba(0,0,0,0.2)",
+                [40, 300],
+                [60, 290],
+                [85, 290],
+                [90, 300]);
+        }, 70000)
+        // context.moveTo(40, 300);
+        // context.bezierCurveTo(60, 310, 85, 310, 90, 300);
+        setTimeout(function () {
+            bezierCurve(context2, 0, "rgba(0,0,0,0.2)",
+                [40, 300],
+                [60, 310],
+                [85, 310],
+                [90, 300]);
+        },73000)
+        // context.fill()
+
+setTimeout(function () {
+    context1.fillStyle= "rgba(0,0,0,0.1)"
+    context1.beginPath();
+    context1.moveTo(-110, 300);
+    context1.bezierCurveTo(-30, 270, 30, 270, 120, 300);
+    context1.bezierCurveTo(30, 330, -30, 330, -110, 300);
+    context1.fill()
+},64500)
+// },0)
+        setTimeout(function () {
+            context1.beginPath();
+            context1.fillStyle= "rgba(0,0,0,0.5)"
+            context1.moveTo(-40,300);
+            context1.bezierCurveTo(-20, 290, 5, 290, 10, 300);
+            context1.bezierCurveTo( 5, 310, -20, 310,-40,300);
+            context1.fill()
+        },69500)
+        // },0)
+        setTimeout(function () {
+            context1.beginPath();
+            context1.fillStyle= "rgba(0,0,0,0.5)"
+            context1.moveTo(40, 300);
+            context1.bezierCurveTo(60, 290, 85, 290, 90, 300);
+            context1.bezierCurveTo(85, 310,60, 310 ,40, 300);
+            context1.fill()
+        },75500)
+        // },0)
+
+
+
+
+
+    }
+
+
+    function font(context,text,fillstyle) {
+       var  i=0;
+        function innerfont(){
+
+            context.beginPath();
+            context.fillStyle=fillstyle;
+            context.font="bold 100px 微软雅黑 ";
+            // alert(text.length)
+            if(i<text.length/2){
+                context.fillText(text[i],-x/2+50,i*100-50);
+            }else {
+                context.fillText(text[i],x/2-150,(i-text.length/2)*100-50);
+            }
+
+            if(++i<text.length)
+                setTimeout(function () {
+                    innerfont();
+                },1000)
+
+        }
+      innerfont();
+
+    }
+
+    //
+    // function drawline() {
+    //     //基线
+    //     context.strokeStyle = "#dddddd";
+    //     context.lineWidth = "1px";
+    //     for (var i = 0; i < y; i += 10) {
+    //         context.beginPath();
+    //         context.moveTo(0, i);
+    //         context.lineTo(x, i);
+    //         context.stroke();
+    //     }
+    //
+    //     for (var j = 0; j < x; j += 10) {
+    //         context.beginPath();
+    //         context.moveTo(j, 0);
+    //         context.lineTo(j, y);
+    //         context.stroke();
+    //     }
+    //
+    // }
+    //绘制
+    function bezierCurve(context, i, strokeStyle, start, p1, p2, end) {
+
+        context.moveTo(start[0], start[1]);
+
+        function innerbezierCurve() {
+            var p = [{x: start[0], y: start[1]}, {x: p1[0], y: p1[1]}, {x: p2[0], y: p2[1]}, {x: end[0], y: end[1]}];
+
+            // context.clearRect(0, 0, x, y);
+            context.save()
+            context.strokeStyle = strokeStyle;
+            var cur = curve(p, 100);
+            u = cur(i++);
+            v = cur(i - 2);
+            context.beginPath();
+            context.moveTo(v.x, v.y);
+            context.lineTo(u.x, u.y);
+            // context.moveTo(u.x, u.y);
+
+            context.stroke();
+            // context.fill();
+            context.restore();
+            if (i <= 100) {
+                window.requestAnimationFrame(innerbezierCurve);
+            }
+
+
+        }
+
+
+        innerbezierCurve();
+    }
+
+
+    function rander(context, a, b, cR, startAngle, endAngle, xAngle, tmpAngle, strokeStyle) {
+        function innerrander() {
+
+            // alert(tmpAngle)
+            if (tmpAngle >= endAngle) {
+
+                return;
+            } else if (tmpAngle + xAngle > endAngle) {
+                tmpAngle = endAngle;
+            } else {
+                tmpAngle += xAngle;
+            }
+            // context.clearRect(0, 0, x, y);
+            context.save()
+            //画圈
+            context.beginPath()
+            context.strokeStyle = strokeStyle;
+
+            context.arc(a, b, cR, startAngle, tmpAngle);
+
+
+            context.stroke();
+            context.restore()
+            if (tmpAngle < endAngle) {
+                window.requestAnimationFrame(innerrander);
+            } else {
+                // context.fill();
+            }
+
+        }
+
+        innerrander();
+
+    }
+
+    function line(context, start, end, strokestyle) {
+        context.moveTo(start[0], start[1]);
+        var i = 0;
+        var x = start[0];
+        var y = start[1];
+
+        function innerline() {
+            var k, b, t;
+            if (end[0] - start[0] != 0) {
+                k = (end[1] - start[1]) / (end[0] - start[0]);
+                b = end[1] - k * end[0];
+                // var t=Math.sqrt(Math.pow((end[1]-start[1]),2)+Math.pow((end[0]-start[0]),2));
+                t = end[0] - start[0];
+                t = t / 100;
+                x += t;
+                y = k * x + b;
+                // alert(x+","+y)
+            } else {
+                t = end[1] - start[1];
+                t = t / 100;
+                y += t;
+                // alert(x+","+y+","+t)
+            }
+
+            context.beginPath()
+            context.strokeStyle = strokestyle;
+            context.moveTo(start[0], start[1]);
+            context.lineTo(x, y);
+            context.stroke();
+
+            if (i++ <= 100)
+                window.requestAnimationFrame(innerline);
+
+        }
+
+        innerline();
+    }
+
+    function curve(p, lt)//贝塞尔曲线
+    {
+        var sx = 0, sy = 0, s = p.length - 1;
+        var q = [];
+        for (var i = 0, l = p.length - 2; i < l; ++i) {
+            q[i] = {
+                x: (p[i + 1].x - p[i].x) * s - sx,
+                y: (p[i + 1].y - p[i].y) * s - sy
+            };
+            sx += q[i].x;
+            sy += q[i].y;
+        }
+        q[i] = {
+            x: p[i + 1].x - p[0].x - sx,
+            y: p[i + 1].y - p[0].y - sy
+        };
+        sx = sy = s = i = l = undefined;
+        return function (t) {
+            t /= lt;
+            var x = 0, y = 0;
+            for (var i = q.length - 1; i >= 0; --i) {
+                x = (x + q[i].x) * t;
+                y = (y + q[i].y) * t;
+            }
+            return {x: x + p[0].x, y: y + p[0].y};
+        };
+    }
+
+    function Timer(func) {
+
+        var start = new Date().getTime();//起始时间
+
+        func();//执行待测函数
+
+        var end = new Date().getTime();//接受时间
+
+        return (end - start);//返回函数执行需要时间
+
+    }
+
+</script>
+
+</html>
